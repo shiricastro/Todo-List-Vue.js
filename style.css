@@ -1,0 +1,196 @@
+body{
+    padding:0;
+    margin:0;
+    text-align: center;
+    font-family: 'Lemonada', cursive; 
+    background-color: #f7f7f7;
+}
+h1{
+    color:rgba(142, 27, 27,.3);
+    font-size: 3rem;
+    margin-bottom: .3rem;
+}
+input{
+    font-family: 'Lemonada', cursive;
+    line-height: 1.2;
+    font-size: initial;
+}
+input[type=text]:focus{
+    outline: 0;
+}
+button:focus{
+    outline: 0;
+}
+form.mainTodo{
+   border:1px solid #e6e6e6;
+   box-sizing: border-box;
+   border-bottom:none;
+   width: 550px;
+   max-width: 80%;
+   margin: 0 auto;
+   display: flex;
+   box-shadow: 0px 0px 6px 3px rgba(230,230,230,1);
+   padding: 5px 0;
+   background-color: white;
+}
+form.mainTodo button{
+    border: 0;
+    background: white;
+    padding: 1px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgba(0,0,0,.4);
+}
+form.mainTodo button:hover{
+    color: rgb(0,0,0);
+}
+input.mainInput{
+    font-style: oblique;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    padding: 15px;
+    
+}
+ul.todoList{
+    list-style: none;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto; 
+    box-sizing: border-box;
+}
+div.container{
+    width: 550px;
+    max-width: 80%;
+    margin: 0 auto;
+    box-shadow: 0px 4px 6px 3px rgba(230,230,230,1);
+    box-sizing: border-box;
+    background-color: white;
+}
+div.container div.footer{
+    color:#bbb;
+}
+
+.edit{
+    width: 80%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    background-color: inherit;
+    margin: 5px auto;
+    /*display: none*/
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity linear .5s;
+    position:absolute;
+    left:-1000px;
+}
+li {
+    position: relative;
+    border-bottom:1px solid #e6e6e6;
+    padding: 5px 0;
+}
+li:last-child{
+    border: none;
+}
+li:first-child{
+     border-top: 1px solid #e6e6e6;   
+}
+
+.view{
+    transition: opacity linear .5s;
+    opacity: 1;
+    display: flex;
+}
+ul.todoList li span {
+    text-align: left;
+    word-break: break-all;
+    padding: 15px 60px 15px 15px;
+    margin-left: 40px;
+    display: block;
+    line-height: 1.2;
+}
+ul.todoList li.active:hover,
+ul.todoList li.active:focus{
+   background-color: #f9f9f9; 
+}
+ul.todoList li.editing:hover,
+ul.todoList li.editing:focus{
+   background-color: white; 
+}
+ul.todoList li input[type="checkbox"]{
+    width: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: none;
+}
+ul.todoList li button{   
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    margin: auto 0;
+    background: none;
+    border: none;
+    color: rgb(142, 27, 27);
+    font-weight: bold;
+    opacity: 0;
+    cursor: pointer;
+}
+ul.todoList li:hover button,
+ul.todoList li:focus button{
+    opacity: .7;
+}
+ul.todoList li button:hover,
+ul.todoList li button:focus{
+    opacity: 1;
+}
+div.view span.strike{
+    text-decoration: line-through;
+    color: rgba(0,0,0,.4);
+}
+ul.todoList li.active.strikeLi{
+    background-color: #f9f9f9;
+}
+ul.todoList editing.strikeLi{
+    background-color: white;
+}
+
+li.editing .edit{
+    /*display: block;*/
+    opacity: 1;
+    visibility: visible;
+    position:relative;
+    left:0;    
+}
+li.editing .view{
+    /*display: none;*/
+    opacity: 0;
+    visibility: hidden;
+    position:absolute;
+    left:-1000px;
+}
+
+
+@media(max-width:420px){
+    h1{
+        font-size: 45px;
+    } 
+    sapn ,input,div{
+        font-size: 14px!important;
+    }
+    form button{
+       font-size: 12px!important; 
+    }
+}
+
+@media(max-width:350px){
+    h1{
+        font-size: 30px;
+    }
+
+}
