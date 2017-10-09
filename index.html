@@ -16,16 +16,7 @@
 			<button type="submit">➕</button>		
 		</form>
 		<div class="container">
-			<ul class="todoList">
-				<li class="active" v-for="(task,key) in tasks" :class="{'strikeLi':task.completed ,editing: task.editMode }">
-					<div class="view">
-                        <input type="checkbox" v-model="task.completed" />
-                        <span :class="{'strike':task.completed}" @click="turnOnEditMode(key)">{{task.description}}</span>
-                        <button @click="deleteTodo(key)">✖</button>
-                    </div>
-                    <input class="edit" type="text" v-model="task.description" name="edit" @keyup="$event.keyCode == 13 ? turnOffEditMode(key) : null" @blur="turnOffEditMode(key)">
-				</li>
-			</ul>
+			<tasks :alltasks="$data.tasks"></tasks>
 			<div class="footer">Tasks: <span>{{tasks.length}}</span></div>
 		</div>
 	</div>
