@@ -16,7 +16,7 @@
 			<button type="submit">➕</button>		
 		</form>
 		<div class="container">
-			<tasks :alltasks="$data.tasks"></tasks>
+			<tasks :tasks="tasks" :foo.sync="tasks"></tasks>
 			<div class="footer">Tasks: <span>{{tasks.length}}</span></div>
 		</div>
 	</div>
